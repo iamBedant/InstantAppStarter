@@ -1,0 +1,12 @@
+apply plugin: 'com.android.instantapp'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+}
+dependencies {
+    implementation project(":base")
+    implementation project(":featureone")
+    implementation project(":featuretwo")
+
+}

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/InstantAppStarter.iml" filepath="$PROJECT_DIR$/InstantAppStarter.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/base/app.iml" filepath="$PROJECT_DIR$/base/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/featureone/featureone.iml" filepath="$PROJECT_DIR$/featureone/featureone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/featuretwo/featuretwo.iml" filepath="$PROJECT_DIR$/featuretwo/featuretwo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />
     </modules>
   </component>
 </project>

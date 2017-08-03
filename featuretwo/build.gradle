@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.feature'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -6,11 +6,11 @@ android {
 
 
     defaultConfig {
-        applicationId "com.iambedant.instantappstarter.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -23,7 +23,6 @@ android {
 }
 
 dependencies {
-    implementation project(":base")
-    implementation project(":featureone")
-    implementation project(":featuretwo")
+    implementation project(':base')
+
 }

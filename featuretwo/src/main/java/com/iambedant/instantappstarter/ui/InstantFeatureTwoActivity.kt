@@ -1,4 +1,4 @@
-package com.iambedant.instantappstarter.ui.base
+package com.iambedant.instantappstarter.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
