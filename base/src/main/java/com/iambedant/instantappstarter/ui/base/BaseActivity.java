@@ -1,7 +1,9 @@
-package io.iambedant.instantappstarter;
+package com.iambedant.instantappstarter.ui.base;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.iambedant.instantappstarter.R;
 
 public class BaseActivity extends AppCompatActivity {
 

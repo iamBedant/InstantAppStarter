@@ -1,4 +1,4 @@
-package io.iambedant.instantappstarter;
+package com.iambedant.instantappstarter;
 
 import org.junit.Test;
 

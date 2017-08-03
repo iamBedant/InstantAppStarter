@@ -1,4 +1,4 @@
-package io.iambedant.instantappstarter;
+package com.iambedant.instantappstarter;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
