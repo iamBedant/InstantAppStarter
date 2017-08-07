@@ -23,16 +23,22 @@ android {
 dependencies {
     api 'com.android.support:appcompat-v7:26.0.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    application project(":app")
+
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:support-compat:$supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$constraintVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    application project(":app")
+    feature project(":featureone")
+    feature project(":featuretwo")
+
+
+
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    feature project(":featureone")
-    feature project(":featuretwo")
 }
 repositories {
     mavenCentral()
