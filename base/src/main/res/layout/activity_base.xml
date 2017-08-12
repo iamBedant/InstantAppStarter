@@ -7,6 +7,9 @@
     android:orientation="vertical"
     tools:context="com.iambedant.instantappstarter.ui.base.BaseActivity">
 
-
+<TextView
+    android:id="@+id/tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
 
 </LinearLayout>

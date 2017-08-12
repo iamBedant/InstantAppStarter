@@ -2,6 +2,7 @@ package com.iambedant.instantappstarter.data;
 
 
 import android.content.Context;
+
 import com.iambedant.instantappstarter.data.local.pref.PreferencesHelper;
 import com.iambedant.instantappstarter.injection.ApplicationContext;
 
@@ -26,7 +27,12 @@ public class AppDataManager implements DataManager {
 
     @Override
     public String getCurrentUserId() {
-        return null;
+        return mPreferencesHelper.getCurrentUserId();
+    }
+
+    @Override
+    public void setCurrentUserId(String id) {
+        mPreferencesHelper.setCurrentUserId(id);
     }
 
     @Override

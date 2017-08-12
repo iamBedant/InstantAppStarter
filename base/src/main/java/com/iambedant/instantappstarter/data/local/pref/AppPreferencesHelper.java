@@ -1,6 +1,7 @@
 package com.iambedant.instantappstarter.data.local.pref;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.iambedant.instantappstarter.injection.ApplicationContext;
 
@@ -16,13 +17,13 @@ public class AppPreferencesHelper implements PreferencesHelper{
 
     public static final String PREF_FILE_NAME = "_pref_file";
 
-    private final ObscuredSharedPreferences mPref;
+    private final SharedPreferences mPref;
 
     @Inject
     public AppPreferencesHelper(@ApplicationContext Context context) {
 
-//        mPref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
-        mPref = ObscuredSharedPreferences.getPrefs(context, PREF_FILE_NAME, Context.MODE_PRIVATE);
+        mPref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
+//        mPref = ObscuredSharedPreferences.getPrefs(context, PREF_FILE_NAME, Context.MODE_PRIVATE);
     }
 
     public void clear() {
@@ -57,5 +58,10 @@ public class AppPreferencesHelper implements PreferencesHelper{
     @Override
     public String getCurrentUserId() {
         return getString("default","default");
+    }
+
+    @Override
+    public void setCurrentUserId(String id) {
+        putString("default",id);
     }
 }

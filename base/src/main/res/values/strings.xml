@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">InstantAppStarter</string>
     <string name="asset_statements" translatable="false">[{\n  \"relation\": [\"delegate_permission/common.handle_all_urls\"],\n  \"target\": {\n    \"namespace\": \"web\",\n    \"site\": \"https://iambedant.com\",\n  }\n}]</string>
+    <string name="some_error">Some Error Occurred!</string>
 </resources>
