@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 
 import com.iambedant.instantappstarter.App;
 import com.iambedant.instantappstarter.injection.components.ActivityComponent;
+import com.iambedant.instantappstarter.injection.components.DaggerActivityComponent;
+import com.iambedant.instantappstarter.injection.modules.ActivityModule;
 import com.iambedant.instantappstarter.ui.base.BaseActivity;
 
 /**
@@ -22,6 +24,9 @@ public abstract class BaseCommonActivity extends BaseActivity {
     }
 
     public ActivityComponent getActivityComponent() {
-        return ((App) getApplication()).createActivityComponent();
+        return DaggerActivityComponent.builder()
+                .activityModule(new ActivityModule())
+                .appComponent(((App)getApplication()).getAppComponent())
+                .build();
     }
 }

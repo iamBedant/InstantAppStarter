@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.iambedant.instantappstarter.ui.InstantFeatureTwoActivity">
 
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="154dp" />
 </android.support.constraint.ConstraintLayout>

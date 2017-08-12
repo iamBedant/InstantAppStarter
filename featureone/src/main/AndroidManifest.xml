@@ -3,6 +3,7 @@
 
     <application>
         <activity android:name="com.iambedant.instantappstarter.ui.InstantFeatureOneActivity">
+
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 

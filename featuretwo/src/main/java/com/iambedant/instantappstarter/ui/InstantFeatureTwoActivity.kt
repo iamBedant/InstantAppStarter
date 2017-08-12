@@ -1,13 +1,13 @@
 package com.iambedant.instantappstarter.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.iambedant.instantappstarter.R
-
-class InstantFeatureTwoActivity : AppCompatActivity() {
+import com.iambedant.instantappstarter.ui.base.BaseActivityTwo
+class InstantFeatureTwoActivity : BaseActivityTwo() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        giveActivityComponent().inject(this)
         setContentView(R.layout.activity_instant_feature_two)
     }
 }

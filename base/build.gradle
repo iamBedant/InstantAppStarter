@@ -34,8 +34,8 @@ dependencies {
     feature project(":featureone")
     feature project(":featuretwo")
 
-    api "com.google.dagger:dagger:$daggerVersion"
-    api "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 // reactive
