@@ -8,6 +8,8 @@ import com.iambedant.instantappstarter.data.AppDataManager;
 import com.iambedant.instantappstarter.data.DataManager;
 import com.iambedant.instantappstarter.data.local.pref.AppPreferencesHelper;
 import com.iambedant.instantappstarter.data.local.pref.PreferencesHelper;
+import com.iambedant.instantappstarter.data.remote.ApiHelper;
+import com.iambedant.instantappstarter.data.remote.AppApiHelper;
 import com.iambedant.instantappstarter.injection.ApplicationContext;
 
 import javax.inject.Singleton;
@@ -53,5 +55,10 @@ public class AppModule {
         return appDataManager;
     }
 
+    @Provides
+    @Singleton
+    ApiHelper provideApiHelper(AppApiHelper appApiHelper) {
+        return appApiHelper;
+    }
 
 }
