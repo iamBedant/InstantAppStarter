@@ -9,7 +9,7 @@ import com.iambedant.instantappstarter.injection.modules.AppModule;
  * Created by @iamBedant on 11/08/17.
  */
 
-public class App extends Application {
+public abstract class App extends Application {
 
     private AppComponent appComponent;
 
@@ -17,8 +17,10 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         appComponent = createAppComponent();
-
+        init();
     }
+
+    public abstract void init();
 
 
     public AppComponent getAppComponent() {

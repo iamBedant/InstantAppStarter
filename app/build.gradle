@@ -19,11 +19,13 @@ android {
         uat {
             it.buildConfigField 'String', 'BASE_URL', BaseUrlUat
             it.buildConfigField 'String', 'PASSWORD', passwordUat
+            applicationId "com.iambedant.instantappstarter.app.uat"
             dimension "mode"
         }
         prod {
             it.buildConfigField 'String', 'BASE_URL', BaseUrlProd
             it.buildConfigField 'String', 'PASSWORD', passwordProd
+            applicationId "com.iambedant.instantappstarter.app"
             dimension "mode"
         }
     }

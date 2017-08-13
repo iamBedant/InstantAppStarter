@@ -18,11 +18,17 @@ android {
         uat {
             it.buildConfigField 'String', 'BASE_URL', BaseUrlUat
             it.buildConfigField 'String', 'PASSWORD', passwordUat
+            manifestPlaceholders = [
+                    appName: "InstantStarter uat"
+            ]
             dimension "mode"
         }
         prod {
             it.buildConfigField 'String', 'BASE_URL', BaseUrlProd
             it.buildConfigField 'String', 'PASSWORD', passwordProd
+            manifestPlaceholders = [
+                    appName: "InstantStarter"
+            ]
             dimension "mode"
         }
     }
