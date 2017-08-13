@@ -11,7 +11,7 @@ buildscript {
         buildToolsVersion = "26.0.0"
 
         // App dependencies
-        supportLibraryVersion = '26.0.0'
+        supportLibraryVersion = '26.0.1'
         constraintVersion = '1.0.2'
 
 
@@ -24,6 +24,14 @@ buildscript {
         rxandroidVersion = '2.0.1'
 
         daggerVersion = '2.11'
+
+        timberVersion = '4.5.1'
+        constraintLayoutVersion="1.0.2"
+
+        retrofitVersion='2.3.0'
+        loggingInterceptor='3.7.0'
+        rxJavaAdapter='1.0.0'
+        raveVersion='2.0.0'
 
     }
 

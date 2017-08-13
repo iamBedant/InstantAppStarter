@@ -11,12 +11,61 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
+    flavorDimensions "mode"
+    productFlavors {
+        uat {
+            it.buildConfigField 'String', 'BASE_URL', BaseUrlUat
+            it.buildConfigField 'String', 'PASSWORD', passwordUat
+            dimension "mode"
+        }
+        prod {
+            it.buildConfigField 'String', 'BASE_URL', BaseUrlProd
+            it.buildConfigField 'String', 'PASSWORD', passwordProd
+            dimension "mode"
+        }
+    }
+
     buildTypes {
+        debug {
+
+        }
         release {
             minifyEnabled false
+//            signingConfig signingConfigs.releaseConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    splits {
+
+        // Configures multiple APKs based on ABI.
+        abi {
+
+            // Enables building multiple APKs per ABI.
+            enable false
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86, armeabi-v7a, and mips.
+
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86_64", "armeabi-v7a", "x86", "arm64-v8a"
+
+            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+            universalApk true
+        }
+    }
+    lintOptions {
+
+        // If set to true, turns off analysis progress reporting by lint.
+        quiet true
+        // if set to true (default), stops the build if errors are found.
+        abortOnError false
+        // if true, only report errors.
+        ignoreWarnings true
     }
 }
 
@@ -26,15 +75,17 @@ dependencies {
     api "com.android.support:appcompat-v7:$supportLibraryVersion"
     api "com.android.support:support-compat:$supportLibraryVersion"
     api "com.android.support.constraint:constraint-layout:$constraintVersion"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     api "com.android.support:design:$supportLibraryVersion"
-    api 'com.jakewharton.timber:timber:4.5.1'
+    api "com.android.support:support-vector-drawable:$supportLibraryVersion"
+    api "com.android.support:animated-vector-drawable:$supportLibraryVersion"
+    api "com.jakewharton.timber:timber:$timberVersion"
 
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    api "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+
     application project(":app")
     feature project(":featureone")
     feature project(":featuretwo")
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
@@ -45,15 +96,15 @@ dependencies {
     compile "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
 
     //Network
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptor"
 
     //Rx adapter for retrofit
-    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJavaAdapter"
 
-    annotationProcessor 'com.uber:rave-compiler:2.0.0'
-    compile 'com.uber:rave:2.0.0'
+    annotationProcessor "com.uber:rave-compiler:$raveVersion"
+    compile "com.uber:rave:$raveVersion"
 
 
     testImplementation "junit:junit:$junitVersion"

@@ -9,6 +9,8 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.POST;
@@ -33,9 +35,16 @@ public class AppApiHelper implements ApiHelper{
     }
 
     private ApiClient getApiClient(){
+
+        OkHttpClient.Builder client = new OkHttpClient.Builder();
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        client.addInterceptor(loggingInterceptor);
+
         Retrofit retrofit = new Retrofit
                 .Builder()
                 .baseUrl(BASE_URL)
+                .client(client.build())
                 .addConverterFactory(RaveConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
