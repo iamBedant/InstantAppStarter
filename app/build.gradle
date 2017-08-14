@@ -1,10 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        uatRelease {
+            keyAlias 'uR'
+            keyPassword 'android'
+            storeFile file('/Users/kuliza-300/Documents/Github/InstantAppStarter/app/uatKeystore.jks')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-
-
     defaultConfig {
         applicationId "com.iambedant.instantappstarter.app"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -29,15 +35,14 @@ android {
             dimension "mode"
         }
     }
-
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
         }
         release {
             minifyEnabled false
-//            signingConfig signingConfigs.releaseConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.uatRelease
         }
     }
     splits {
@@ -73,8 +78,7 @@ android {
 }
 
 dependencies {
-    implementation project(":base")
-    implementation project(":featureone")
-    implementation project(":featuretwo")
-
+    implementation project(':base')
+    implementation project(':featureone')
+    implementation project(':featuretwo')
 }

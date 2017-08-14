@@ -1,19 +1,12 @@
 
 package com.iambedant.instantappstarter.ui.base;
 
+import com.iambedant.instantappstarter.ApiErrorUtils;
 import com.iambedant.instantappstarter.data.DataManager;
-import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
-import com.uber.rave.RaveException;
-
-import java.io.IOException;
-import java.net.SocketTimeoutException;
-
 import javax.inject.Inject;
-
 import io.reactivex.disposables.CompositeDisposable;
-import okhttp3.ResponseBody;
 
-public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
+public  class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     private static final String TAG = "BasePresenter";
 
@@ -42,28 +35,9 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     @Override
     public void handleApiError(Throwable t) {
-        //Handle Retrofit Error
+        ApiErrorUtils utils = new ApiErrorUtils();
+        getMvpView().onError(utils.getErrorMessage(t));
 
-        if (t instanceof HttpException) {
-            ResponseBody responseBody = ((HttpException) t).response().errorBody();
-            return;
-            //Show Error
-        } else if (t instanceof SocketTimeoutException) {
-            //Show Timeout Error
-            return;
-        } else if (t instanceof IOException) {
-            //Show Network Error
-            return;
-        }
-        //Handle Rx Error
-
-        //Handle Rave Error
-        Throwable cause = t.getCause();
-        if (cause instanceof RaveException) {
-            //Show Error Message
-            //TODO:: Show Different Message at Uat and Debug
-            return;
-        }
     }
 
     public boolean isViewAttached() {
