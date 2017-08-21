@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iambedant.instantappstarter.featureone">
+    package="com.iambedant.instantappstarter.others">
 
     <application>
         <meta-data
             android:name="asset_statements"
             android:resource="@string/asset_statements" />
-        <activity android:name="com.iambedant.instantappstarter.ui.InstantFeatureOneActivity">
+        <activity android:name="com.iambedant.instantappstarter.ui.OtherActivity">
 
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
@@ -16,7 +17,7 @@
                 <data
                     android:scheme="http"
                     android:host="iambedant.com"
-                    android:pathPattern="/featureone" />
+                    android:pathPattern="/others" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -27,8 +28,9 @@
                 <data
                     android:scheme="https"
                     android:host="iambedant.com"
-                    android:pathPattern="/featureone" />
+                    android:pathPattern="/others" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

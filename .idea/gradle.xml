@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/featureone" />
             <option value="$PROJECT_DIR$/featuretwo" />
             <option value="$PROJECT_DIR$/instantapp" />
+            <option value="$PROJECT_DIR$/others" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

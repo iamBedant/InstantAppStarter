@@ -37,12 +37,33 @@ android {
     }
     buildTypes {
         debug {
-            applicationIdSuffix ".debug"
+
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+            minifyEnabled false
+            useProguard false
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            useProguard true
             signingConfig signingConfigs.uatRelease
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        qualityassurance {
+            applicationIdSuffix ".quality"
+            debuggable true
+            minifyEnabled true
+            useProguard true
+            signingConfig signingConfigs.uatRelease
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     splits {
@@ -81,4 +102,5 @@ dependencies {
     implementation project(':base')
     implementation project(':featureone')
     implementation project(':featuretwo')
+    implementation project(':others')
 }
