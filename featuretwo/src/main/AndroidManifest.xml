@@ -1,15 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.iambedant.instantappstarter.featuretwo">
-
 
     <application>
         <meta-data
             android:name="asset_statements"
             android:resource="@string/asset_statements" />
-        <activity android:name="com.iambedant.instantappstarter.ui.InstantFeatureTwoActivity">
 
+        <activity android:name="com.iambedant.instantappstarter.ui.newslist.NewsListActivity">
 
-            <intent-filter android:autoVerify="true">
+            <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -18,7 +18,7 @@
                 <data
                     android:scheme="http"
                     android:host="iambedant.com"
-                    android:pathPattern="/featuretwo" />
+                    android:pathPrefix="/newslist" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -29,8 +29,9 @@
                 <data
                     android:scheme="https"
                     android:host="iambedant.com"
-                    android:pathPattern="/featuretwo" />
+                    android:pathPattern="/newslist" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

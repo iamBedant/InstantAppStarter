@@ -73,4 +73,8 @@ public final class CommonUtils {
     public static String getTimeStamp() {
         return new SimpleDateFormat(AppConstants.TIMESTAMP_FORMAT, Locale.US).format(new Date());
     }
+
+    public static String parseThumbnailUrl(String url){
+        return "https://icons.better-idea.org/icon?url="+url+"&amp;size=70..120..200";
+    }
 }

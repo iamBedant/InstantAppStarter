@@ -1,8 +1,7 @@
 package com.iambedant.instantappstarter.injection;
 
 import com.iambedant.instantappstarter.injection.components.AppComponent;
-import com.iambedant.instantappstarter.injection.modules.ActivityModule;
-import com.iambedant.instantappstarter.ui.InstantFeatureOneActivity;
+import com.iambedant.instantappstarter.ui.newsSources.NewsSourceActivity;
 import com.iambedant.instantappstarter.ui.thankyou.ThankYouActivity;
 
 import dagger.Component;
@@ -13,5 +12,5 @@ import dagger.Component;
 @PerActivity
 @Component(dependencies = AppComponent.class, modules = ActivityModuleOne.class)
 public interface ActivityComponentOne {
-    void inject(InstantFeatureOneActivity activity);
+    void inject(NewsSourceActivity activity);
 }

@@ -38,7 +38,7 @@ android {
     }
     splits {
 
-        // Configures multiple APKs based on ABI.
+         //Configures multiple APKs based on ABI.
         abi {
 
             // Enables building multiple APKs per ABI.

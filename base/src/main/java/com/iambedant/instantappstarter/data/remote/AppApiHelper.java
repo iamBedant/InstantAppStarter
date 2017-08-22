@@ -1,7 +1,9 @@
 package com.iambedant.instantappstarter.data.remote;
 
+import com.iambedant.instantappstarter.BuildConfig;
 import com.iambedant.instantappstarter.data.remote.model.UserRequest;
 import com.iambedant.instantappstarter.data.remote.model.UserResponse;
+import com.iambedant.instantappstarter.data.remote.model.newsSource.NewsSources;
 import com.iambedant.instantappstarter.data.remote.rave.RaveConverterFactory;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
@@ -13,6 +15,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -22,7 +25,7 @@ import retrofit2.http.POST;
 @Singleton
 public class AppApiHelper implements ApiHelper{
 
-    private static String BASE_URL = "http://demo7502315.mockable.io/";
+
 
     @Inject
     public AppApiHelper() {
@@ -32,6 +35,9 @@ public class AppApiHelper implements ApiHelper{
     public interface ApiClient {
         @POST("login")
         Observable<UserResponse> getResults();
+
+        @GET("sources")
+        Observable<NewsSources> getSources();
     }
 
     private ApiClient getApiClient(){
@@ -43,7 +49,7 @@ public class AppApiHelper implements ApiHelper{
 
         Retrofit retrofit = new Retrofit
                 .Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL)
                 .client(client.build())
                 .addConverterFactory(RaveConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
@@ -55,5 +61,10 @@ public class AppApiHelper implements ApiHelper{
     @Override
     public Observable<UserResponse> doLogin(UserRequest request) {
         return getApiClient().getResults();
+    }
+
+    @Override
+    public Observable<NewsSources> loadSources() {
+        return getApiClient().getSources();
     }
 }

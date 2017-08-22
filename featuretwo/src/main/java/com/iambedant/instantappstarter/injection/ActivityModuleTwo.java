@@ -1,6 +1,10 @@
 package com.iambedant.instantappstarter.injection;
 
 
+import com.iambedant.instantappstarter.ui.newsSources.NewsListMvpPresenter;
+import com.iambedant.instantappstarter.ui.newsSources.NewsListMvpView;
+import com.iambedant.instantappstarter.ui.newsSources.NewsListPresenter;
+
 import dagger.Module;
 import dagger.Provides;
 import io.reactivex.disposables.CompositeDisposable;
@@ -16,4 +20,9 @@ public class ActivityModuleTwo {
         return new CompositeDisposable();
     }
 
+    @Provides
+    @PerActivity
+    NewsListMvpPresenter<NewsListMvpView> provideNewsSourcePresenter(NewsListPresenter<NewsListMvpView> presenter){
+        return presenter;
+    }
 }

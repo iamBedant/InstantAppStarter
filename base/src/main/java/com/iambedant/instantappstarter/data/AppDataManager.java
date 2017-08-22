@@ -7,6 +7,7 @@ import com.iambedant.instantappstarter.data.local.pref.PreferencesHelper;
 import com.iambedant.instantappstarter.data.remote.ApiHelper;
 import com.iambedant.instantappstarter.data.remote.model.UserRequest;
 import com.iambedant.instantappstarter.data.remote.model.UserResponse;
+import com.iambedant.instantappstarter.data.remote.model.newsSource.NewsSources;
 import com.iambedant.instantappstarter.injection.ApplicationContext;
 
 import javax.inject.Inject;
@@ -51,5 +52,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Observable<UserResponse> doLogin(UserRequest request) {
         return mApiHelper.doLogin(request);
+    }
+
+    @Override
+    public Observable<NewsSources> loadSources() {
+        return mApiHelper.loadSources();
     }
 }

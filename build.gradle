@@ -14,7 +14,8 @@ buildscript {
         supportLibraryVersion = '26.0.1'
         constraintVersion = '1.0.2'
 
-
+        gsonVersion ='2.7'
+        glideVersion = '4.0.0'
         //Test
         junitVersion = '4.12'
         testRunnerVersion='1.0.0'
