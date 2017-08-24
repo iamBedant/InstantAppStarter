@@ -73,6 +73,7 @@ android {
 }
 
 dependencies {
+
     api 'com.android.support:appcompat-v7:26.0.1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -83,13 +84,12 @@ dependencies {
     api "com.android.support:support-vector-drawable:$supportLibraryVersion"
     api "com.android.support:animated-vector-drawable:$supportLibraryVersion"
     api "com.jakewharton.timber:timber:$timberVersion"
-
     api "com.google.code.gson:gson:$gsonVersion"
-    api "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    api "com.github.bumptech.glide:glide:$glideVersion"
+    api "io.reactivex.rxjava2:rxjava:$rxjava2Version"
+    api "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
 
-    application project(":app")
-    feature project(":featureone")
-    feature project(":featuretwo")
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android:$daggerVersion"
@@ -97,8 +97,7 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     // reactive
-    compile "io.reactivex.rxjava2:rxjava:$rxjava2Version"
-    compile "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+
 
     //Network
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
@@ -108,15 +107,21 @@ dependencies {
     //Rx adapter for retrofit
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJavaAdapter"
 
+    //Model Validation
+    implementation "com.uber:rave:$raveVersion"
     annotationProcessor "com.uber:rave-compiler:$raveVersion"
-    compile "com.uber:rave:$raveVersion"
+
+    //
+    application project(":app")
+    feature project(":featureone")
+    feature project(":featuretwo")
+    feature project(":others")
 
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$testRunnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
 
-    feature project(":others")
 }
 repositories {
     mavenCentral()

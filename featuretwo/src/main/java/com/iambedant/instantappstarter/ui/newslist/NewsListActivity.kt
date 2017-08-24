@@ -8,14 +8,17 @@ import com.iambedant.instantappstarter.featuretwo.R
 import com.iambedant.instantappstarter.ui.base.BaseActivityTwo
 import com.iambedant.instantappstarter.ui.newsSources.NewsListMvpPresenter
 import com.iambedant.instantappstarter.ui.newsSources.NewsListMvpView
+import timber.log.Timber
 import javax.inject.Inject
+
+
 
 class NewsListActivity : BaseActivityTwo(),NewsListMvpView {
 
     override fun updateViewModel(articles: List<Article>) {
         mRvNewsList.adapter = NewsListAdapter(articles, object : NewsListAdapter.OnItemClickListener {
             override fun onItemClick(item: Article) {
-
+                //TODO Launch News Url
             }
         })
     }
@@ -32,7 +35,14 @@ class NewsListActivity : BaseActivityTwo(),NewsListMvpView {
         mRvNewsList = findViewById(R.id.rv_news_list)
         mPresenter.onAttach(this)
         mRvNewsList.layoutManager = LinearLayoutManager(this)
-        mPresenter.loadNewsList()
 
+        handleApplink()
+    }
+
+
+    fun handleApplink(){
+        if(intent?.data!=null && intent.data.pathSegments.size>0){
+            mPresenter.loadNewsList(intent.data.pathSegments[1])
+        }
     }
 }

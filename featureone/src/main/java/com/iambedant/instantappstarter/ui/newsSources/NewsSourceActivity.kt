@@ -8,7 +8,6 @@ import com.iambedant.instantappstarter.featureone.R
 import com.iambedant.instantappstarter.ui.base.BaseActivityOne
 import timber.log.Timber
 import javax.inject.Inject
-import android.support.v4.content.ContextCompat.startActivity
 import android.content.Intent
 import android.net.Uri
 
@@ -22,8 +21,10 @@ class NewsSourceActivity : BaseActivityOne(), NewsSourceMvpView {
     }
 
     override fun launchDetails(url: String) {
+        Timber.d(url)
         var intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         intent.addCategory(Intent.CATEGORY_BROWSABLE)
+        intent.`package` = this.packageName
         this.startActivity(intent)
     }
 

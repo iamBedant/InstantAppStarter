@@ -7,6 +7,6 @@ import com.iambedant.instantappstarter.ui.thankyou.ThankYouMvpView
 @PerActivity
 interface NewsListMvpPresenter<V : NewsListMvpView> : MvpPresenter<V> {
 
-    fun loadNewsList()
+    fun loadNewsList(id:String)
 
 }

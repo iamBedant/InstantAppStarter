@@ -3,6 +3,7 @@ package com.iambedant.instantappstarter.data.remote;
 import com.iambedant.instantappstarter.BuildConfig;
 import com.iambedant.instantappstarter.data.remote.model.UserRequest;
 import com.iambedant.instantappstarter.data.remote.model.UserResponse;
+import com.iambedant.instantappstarter.data.remote.model.newsList.NewsList;
 import com.iambedant.instantappstarter.data.remote.model.newsSource.NewsSources;
 import com.iambedant.instantappstarter.data.remote.rave.RaveConverterFactory;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -17,6 +18,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by @iamBedant on 12/08/17.
@@ -38,6 +41,10 @@ public class AppApiHelper implements ApiHelper{
 
         @GET("sources")
         Observable<NewsSources> getSources();
+
+        @GET("articles")
+
+        Observable<NewsList> getNews(@Query("source") String id, @Query("apiKey") String key);
     }
 
     private ApiClient getApiClient(){
@@ -66,5 +73,10 @@ public class AppApiHelper implements ApiHelper{
     @Override
     public Observable<NewsSources> loadSources() {
         return getApiClient().getSources();
+    }
+
+    @Override
+    public Observable<NewsList> loadNews(String id) {
+        return getApiClient().getNews(id, BuildConfig.PASSWORD);
     }
 }

@@ -9,7 +9,7 @@
 
         <activity android:name="com.iambedant.instantappstarter.ui.newslist.NewsListActivity">
 
-            <intent-filter>
+            <intent-filter >
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -18,7 +18,7 @@
                 <data
                     android:scheme="http"
                     android:host="iambedant.com"
-                    android:pathPrefix="/newslist" />
+                    android:pathPrefix="/newslist/.*" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -29,7 +29,7 @@
                 <data
                     android:scheme="https"
                     android:host="iambedant.com"
-                    android:pathPattern="/newslist" />
+                    android:pathPattern="/newslist/.*" />
             </intent-filter>
         </activity>
     </application>

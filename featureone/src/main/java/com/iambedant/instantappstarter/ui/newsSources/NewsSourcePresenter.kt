@@ -20,7 +20,7 @@ constructor(dataManager: DataManager, compositeDisposable: CompositeDisposable)
     : BasePresenter<V>(dataManager, compositeDisposable),
         NewsSourceMvpPresenter<V> {
     override fun sourceClicked(item: Source) {
-        mvpView.launchDetails(AppConstants.ROOT_ENDPOINT+"/newslist/"+ item.id)
+        mvpView.launchDetails(AppConstants.ROOT_ENDPOINT+"/newslist/"+item.id)
     }
 
     override fun loadNewsSource() {
