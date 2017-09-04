@@ -16,7 +16,8 @@ class NewsSourceActivity : BaseActivityOne(), NewsSourceMvpView {
 
     override fun updateViewModel(sources: List<Source>) {
         mRvSources.adapter = SourcesAdapter(sources, SourcesAdapter.OnItemClickListener {
-            item ->mPresenter.sourceClicked(item)
+            item ->
+            mPresenter.sourceClicked(item)
         })
     }
 

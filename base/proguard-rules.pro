@@ -24,3 +24,11 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class * implements com.uber.rave.ValidatorFactory
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.AppGlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+-dontwarn okio.**
+-dontwarn javax.annotation.**

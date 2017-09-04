@@ -1,6 +1,7 @@
 package com.iambedant.instantappstarter.data.remote;
 
 import com.iambedant.instantappstarter.BuildConfig;
+import com.iambedant.instantappstarter.IdlingResources;
 import com.iambedant.instantappstarter.data.remote.model.UserRequest;
 import com.iambedant.instantappstarter.data.remote.model.UserResponse;
 import com.iambedant.instantappstarter.data.remote.model.newsList.NewsList;
@@ -26,8 +27,7 @@ import retrofit2.http.Query;
  */
 
 @Singleton
-public class AppApiHelper implements ApiHelper{
-
+public class AppApiHelper implements ApiHelper {
 
 
     @Inject
@@ -43,21 +43,26 @@ public class AppApiHelper implements ApiHelper{
         Observable<NewsSources> getSources();
 
         @GET("articles")
-
         Observable<NewsList> getNews(@Query("source") String id, @Query("apiKey") String key);
     }
 
-    private ApiClient getApiClient(){
+    private ApiClient getApiClient() {
 
         OkHttpClient.Builder client = new OkHttpClient.Builder();
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         client.addInterceptor(loggingInterceptor);
 
+        OkHttpClient myClient = client.build();
+
+        if (BuildConfig.DEBUG) {
+            IdlingResources.registerOkHttp(myClient);
+        }
+
         Retrofit retrofit = new Retrofit
                 .Builder()
                 .baseUrl(BuildConfig.BASE_URL)
-                .client(client.build())
+                .client(myClient)
                 .addConverterFactory(RaveConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
