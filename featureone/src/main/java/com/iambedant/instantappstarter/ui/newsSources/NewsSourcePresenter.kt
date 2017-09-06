@@ -24,13 +24,20 @@ constructor(dataManager: DataManager, compositeDisposable: CompositeDisposable)
     }
 
     override fun loadNewsSource() {
+        mvpView.showLoading()
         compositeDisposable.add(dataManager
                 .loadSources()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        { sources -> mvpView.updateViewModel(sources.sources) },
-                        { t -> handleApiError(t) }
+                        { sources -> run{
+                            mvpView.hideLoading()
+                            mvpView.updateViewModel(sources.sources)
+                        } },
+                        { t -> run{
+                            mvpView.hideLoading()
+                            handleApiError(t)
+                        } }
                 )
         )
 

@@ -3,6 +3,7 @@ package com.iambedant.instantappstarter.ui.newslist
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.widget.TextView
 import com.iambedant.instantappstarter.data.remote.model.newsList.Article
 import com.iambedant.instantappstarter.featuretwo.R
 import com.iambedant.instantappstarter.ui.base.BaseActivityTwo
@@ -21,9 +22,11 @@ class NewsListActivity : BaseActivityTwo(),NewsListMvpView {
                 //TODO Launch News Url
             }
         })
+        mTvSource.text = articles[0].author
     }
 
     private lateinit var mRvNewsList: RecyclerView
+    private lateinit var mTvSource: TextView
 
     @Inject
     lateinit var mPresenter: NewsListMvpPresenter<NewsListMvpView>
@@ -33,6 +36,7 @@ class NewsListActivity : BaseActivityTwo(),NewsListMvpView {
         giveActivityComponent().inject(this)
         setContentView(R.layout.activity_news_list)
         mRvNewsList = findViewById(R.id.rv_news_list)
+        mTvSource = findViewById(R.id.tv_source)
         mPresenter.onAttach(this)
         mRvNewsList.layoutManager = LinearLayoutManager(this)
 

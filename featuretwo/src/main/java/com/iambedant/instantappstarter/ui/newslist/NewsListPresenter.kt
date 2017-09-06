@@ -25,12 +25,19 @@ constructor(dataManager: DataManager, compositeDisposable: CompositeDisposable)
         NewsListMvpPresenter<V> {
 
     override fun loadNewsList(id: String) {
+        mvpView.showLoading()
             compositeDisposable.add(dataManager.loadNews(id)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
-                            {list->mvpView.updateViewModel(list.articles)},
-                            { t->handleApiError(t) }
+                            {list->run{
+                                mvpView.hideLoading()
+                                mvpView.updateViewModel(list.articles)
+                            }},
+                            { t->run{
+                                mvpView.hideLoading()
+                                handleApiError(t)
+                            } }
                     )
             )
     }

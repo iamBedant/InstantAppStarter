@@ -18,6 +18,7 @@ import io.reactivex.disposables.CompositeDisposable;
 
 @Module
 public class ActivityModuleOne {
+
     @Provides
     CompositeDisposable provideCompositeDisposable() {
         return new CompositeDisposable();
