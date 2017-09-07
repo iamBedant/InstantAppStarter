@@ -95,12 +95,13 @@ dependencies {
     androidTestImplementation "com.android.support.test:rules:$testRunnerVersion"
     androidTestImplementation "com.android.support:support-annotations:$supportLibraryVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
-    debugImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
+    debugImplementation "com.android.support.test.espresso.idling:idling-concurrent:$espressoVersion"
     debugImplementation ('com.jakewharton.espresso:okhttp3-idling-resource:1.0.0') {
         exclude module: 'support-annotations'
     }
-    androidTestImplementation 'com.squareup.rx.idler:rx2-idler:0.9.0'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+    androidTestImplementation "com.squareup.rx.idler:rx2-idler:$rxIdlerversion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$espressoVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
 
 
 }

@@ -19,7 +19,9 @@ buildscript {
         //Test
         junitVersion = '4.12'
         testRunnerVersion='1.0.0'
-        espressoVersion = '3.0.0'
+        espressoVersion = '3.0.1'
+        mockitoVersion ='2.8.47'
+        rxIdlerversion ='0.9.0'
 
         rxjava2Version = '2.0.6'
         rxandroidVersion = '2.0.1'
