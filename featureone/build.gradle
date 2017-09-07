@@ -12,7 +12,9 @@ android {
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.iambedant.instantappstarter.featureone.MyTestRunner"
+        multiDexEnabled true
+
 
     }
     flavorDimensions "mode"
@@ -93,10 +95,12 @@ dependencies {
     androidTestImplementation "com.android.support.test:rules:$testRunnerVersion"
     androidTestImplementation "com.android.support:support-annotations:$supportLibraryVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
-    debugImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.0'
+    debugImplementation 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
     debugImplementation ('com.jakewharton.espresso:okhttp3-idling-resource:1.0.0') {
         exclude module: 'support-annotations'
     }
+    androidTestImplementation 'com.squareup.rx.idler:rx2-idler:0.9.0'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
 
 
 }

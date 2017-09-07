@@ -1,6 +1,8 @@
 package com.iambedant.instantappstarter;
 
 import android.app.Application;
+import android.support.multidex.MultiDex;
+
 import com.iambedant.instantappstarter.injection.components.AppComponent;
 import com.iambedant.instantappstarter.injection.components.DaggerAppComponent;
 import com.iambedant.instantappstarter.injection.modules.AppModule;
@@ -17,6 +19,7 @@ public abstract class App extends Application {
     public void onCreate() {
         super.onCreate();
         appComponent = createAppComponent();
+        MultiDex.install(this);
         init();
     }
 
