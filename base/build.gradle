@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
@@ -55,14 +55,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    splits {
-        abi {
-            enable false
-            reset()
-            include "x86_64", "armeabi-v7a", "x86", "arm64-v8a"
-            universalApk true
-        }
-    }
+//    splits {
+//        abi {
+//            enable false
+//            reset()
+//            include "x86_64", "armeabi-v7a", "x86", "arm64-v8a"
+//            universalApk true
+//        }
+//    }
     lintOptions {
 
         // If set to true, turns off analysis progress reporting by lint.

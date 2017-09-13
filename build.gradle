@@ -36,6 +36,9 @@ buildscript {
         rxJavaAdapter='1.0.0'
         raveVersion='2.0.0'
 
+        versionCode= 4
+        versionName='1.0'
+
     }
 
     repositories {

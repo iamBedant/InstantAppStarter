@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:targetSandboxVersion="2"
     package="com.iambedant.instantappstarter.featureone">
 
     <application>
@@ -14,28 +15,24 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
+            <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data
-                    android:scheme="http"
-                    android:host="iambedant.com"
-                    android:pathPrefix="/source" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="https" />
+                <data android:scheme="http" />
+                <data android:host="iambedant.com" />
+                <data android:pathPrefix="/source" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:scheme="https"
-                    android:host="iambedant.com"
-                    android:pathPrefix="/source" />
             </intent-filter>
+
+            <meta-data
+                android:name="default-url"
+                android:value="https://iambedant.com/source" />
+
+
         </activity>
     </application>
 
