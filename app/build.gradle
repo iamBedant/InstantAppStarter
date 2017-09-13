@@ -3,9 +3,9 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         uatRelease {
-            keyAlias 'uR'
+            keyAlias 'android'
             keyPassword 'android'
-            storeFile file('/Users/kuliza-300/Documents/Github/InstantAppStarter/app/uatKeystore.jks')
+            storeFile file('/Users/kuliza-300/Documents/Github/InstantAppStarter/app/keystore.jks')
             storePassword 'android'
         }
     }

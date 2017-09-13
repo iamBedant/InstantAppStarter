@@ -10,7 +10,7 @@ android {
         }
     }
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
+        minSdkVersion rootProject.ext.minSdkInstant
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName

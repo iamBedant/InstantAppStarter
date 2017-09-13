@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:targetSandboxVersion="2"
-    package="com.iambedant.instantappstarter.featuretwo">
+    package="com.iambedant.instantappstarter.featuretwo"
+    android:targetSandboxVersion="2">
 
     <application>
         <meta-data
@@ -11,7 +11,23 @@
         <activity android:name="com.iambedant.instantappstarter.ui.newslist.NewsListActivity">
 
 
-            <intent-filter android:autoVerify="true">
+            <!--<intent-filter android:autoVerify="true">-->
+            <!--<action android:name="android.intent.action.VIEW" />-->
+
+            <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--<category android:name="android.intent.category.BROWSABLE" />-->
+
+
+            <!--<data android:scheme="https" />-->
+            <!--<data android:scheme="http" />-->
+            <!--<data android:host="iambedant.com" />-->
+            <!--<data android:pathPrefix="/newslist/.*" />-->
+
+            <!--</intent-filter>-->
+
+            <intent-filter
+                android:autoVerify="true"
+                android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -21,9 +37,10 @@
                 <data android:scheme="https" />
                 <data android:scheme="http" />
                 <data android:host="iambedant.com" />
-                <data android:pathPrefix="/newslist/.*" />
+                <data android:pathPrefix="/newslist" />
 
             </intent-filter>
+
 
         </activity>
     </application>

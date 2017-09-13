@@ -45,8 +45,10 @@ class NewsListActivity : BaseActivityTwo(),NewsListMvpView {
 
 
     fun handleApplink(){
-        if(intent?.data!=null && intent.data.pathSegments.size>0){
-            mPresenter.loadNewsList(intent.data.pathSegments[1])
-        }
+//        if(intent?.data!=null && intent.data.pathSegments.size>0){
+//            mPresenter.loadNewsList(intent.data.pathSegments[1])
+//        }
+
+        mPresenter.loadNewsList("abc-news-au")
     }
 }
