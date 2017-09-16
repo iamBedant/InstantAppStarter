@@ -5,7 +5,7 @@ Get the Sample App on Google Play [here](https://play.google.com/store/apps/deta
 
 ## Instant App links
 * https://iambedant.com/source
-* https://iambedant.com/newslist
+* https://iambedant.com/newslist/bbc-news
 
 ## Project Architecture
 MVP
@@ -21,13 +21,17 @@ MVP
 This Project consist of two Build Flavours.
 * uat
 * prod
+
+## Build Types
+* debug
+* release
 * qualityassurance
 
 ## Known Issues
 * Instant App crashes with proguard on with error message
 ``could not find com.iambedant.instantappstarter.ui.newsSources.NewsSourceActivity in any atom class loader or parent class loader``
 
-##License
+## License
 
 ```MIT License
 
@@ -49,4 +53,4 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.```
+SOFTWARE.
