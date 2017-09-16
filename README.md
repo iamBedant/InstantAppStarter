@@ -1,6 +1,12 @@
 ## InstantAppStarter
 Starter Project Structure  for Android Instant app
 
+Get the Sample App on Google Play [here](https://play.google.com/store/apps/details?id=com.iambedant.instantappstarter.app&hl=en).
+
+## Instant App links
+* https://iambedant.com/source
+* https://iambedant.com/newslist
+
 ## Project Architecture
 MVP
 
@@ -9,11 +15,17 @@ MVP
 * RxJava2
 * Retrofit2
 * Timber
+* Rave
 
 ## BuildFlavours
 This Project consist of two Build Flavours.
 * uat
 * prod
+* qualityassurance
+
+## Known Issues
+* Instant App crashes with proguard on with error message
+``could not find com.iambedant.instantappstarter.ui.newsSources.NewsSourceActivity in any atom class loader or parent class loader``
 
 ##License
 
