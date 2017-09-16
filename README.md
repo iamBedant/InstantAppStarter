@@ -1,6 +1,12 @@
 ## InstantAppStarter
 Starter Project Structure  for Android Instant app
 
+Get the Sample App on Google Play [here](https://play.google.com/store/apps/details?id=com.iambedant.instantappstarter.app&hl=en).
+
+## Instant App links
+* https://iambedant.com/source
+* https://iambedant.com/newslist
+
 ## Project Architecture
 MVP
 
