@@ -9,4 +9,6 @@ import com.iambedant.instantappstarter.ui.base.MvpView
 interface NewsListMvpView : MvpView {
 
     fun updateViewModel(articles:List<Article>)
+    fun showInstantAppDownloadButton()
+    fun hideInstantAppDownloadButton()
 }

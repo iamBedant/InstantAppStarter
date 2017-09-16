@@ -12,32 +12,32 @@
 
 
             <!--<intent-filter android:autoVerify="true">-->
-            <!--<action android:name="android.intent.action.VIEW" />-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
 
-            <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--<category android:name="android.intent.category.BROWSABLE" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+                <!--<category android:name="android.intent.category.BROWSABLE" />-->
 
 
-            <!--<data android:scheme="https" />-->
-            <!--<data android:scheme="http" />-->
-            <!--<data android:host="iambedant.com" />-->
-            <!--<data android:pathPrefix="/newslist/.*" />-->
+                <!--<data android:scheme="https" />-->
+                <!--<data android:scheme="http" />-->
+                <!--<data android:host="iambedant.com" />-->
+                <!--<data android:pathPrefix="/newslist/.*" />-->
 
             <!--</intent-filter>-->
 
             <intent-filter
-                android:autoVerify="true"
-                android:order="1">
-                <action android:name="android.intent.action.VIEW" />
+            android:autoVerify="true"
+            android:order="1">
+            <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
 
 
-                <data android:scheme="https" />
-                <data android:scheme="http" />
-                <data android:host="iambedant.com" />
-                <data android:pathPrefix="/newslist" />
+            <data android:scheme="https" />
+            <data android:scheme="http" />
+            <data android:host="iambedant.com" />
+            <data android:pathPrefix="/newslist" />
 
             </intent-filter>
 
