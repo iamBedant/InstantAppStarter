@@ -9,11 +9,17 @@ MVP
 * RxJava2
 * Retrofit2
 * Timber
+* Rave
 
 ## BuildFlavours
 This Project consist of two Build Flavours.
 * uat
 * prod
+* qualityassurance
+
+## Known Issues
+* Instant App crashes with proguard on with error message
+``could not find com.iambedant.instantappstarter.ui.newsSources.NewsSourceActivity in any atom class loader or parent class loader``
 
 ##License
 
