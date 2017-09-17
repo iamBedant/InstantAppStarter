@@ -3,9 +3,7 @@ package com.iambedant.instantappstarter.ui.newslist
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.TextView
 import com.google.android.instantapps.InstantApps
 import com.iambedant.instantappstarter.data.remote.model.newsList.Article
 import com.iambedant.instantappstarter.featuretwo.R
@@ -48,6 +46,7 @@ class NewsListActivity : BaseActivityTwo(), NewsListMvpView {
         mPresenter.onAttach(this)
         rv_news_list.layoutManager = LinearLayoutManager(this)
         handleApplink()
+        mPresenter.handlePrompt(InstantApps.isInstantApp(this))
         ibtn_download.setOnClickListener {
             InstantApps.showInstallPrompt(this,INSTANT_APPS_CODE,"" )
         }

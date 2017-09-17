@@ -38,8 +38,8 @@ buildscript {
         rxJavaAdapter='1.0.0'
         raveVersion='2.0.0'
 
-        versionCode= 9
-        versionName='2.2'
+        versionCode= 10
+        versionName='3.0'
         instantAppVersion='1.0.0'
 
     }
