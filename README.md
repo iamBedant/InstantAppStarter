@@ -31,6 +31,9 @@ This Project consist of two Build Flavours.
 * Instant App crashes with proguard on with error message
 ``could not find com.iambedant.instantappstarter.ui.newsSources.NewsSourceActivity in any atom class loader or parent class loader``
 
+## Contributing to the project
+If you want to improve this project, your pull requests are most welcome.
+
 ## License
 
 ```MIT License
