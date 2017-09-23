@@ -1,14 +1,38 @@
-## InstantAppStarter
+# InstantAppStarter
 Starter Project Structure  for Android Instant app
 
 Get the Sample App on Google Play [here](https://play.google.com/store/apps/details?id=com.iambedant.instantappstarter.app&hl=en).
+## Medium Link
+https://blog.mindorks.com/android-mvp-architecture-with-instant-app-support-11ba48241a82
 
 ## Instant App links
 * https://iambedant.com/source
 * https://iambedant.com/newslist/bbc-news
 
-## Project Architecture
+![](https://cdn-images-1.medium.com/max/1800/1*CWeD1UdUbAihM3c36Fi5OA.png)
+
+# Project Architecture
 MVP
+## High level Structure:
+### App Module: 
+Responsible for building the Application Apk.
+### Instant App Module: 
+Responsible for building Instant App Apks.
+### Feature Modules:
+* Base Module: Contains all Common components like Network component, Dependency Injection Setup, Base Activities, Base Presenters, etc.
+* Feature One Module: Contains all classes for first Instant App, which displays a list of news sources in a recyclerview.
+* Feature Two Module: Contains all classes for Second Instant App, which displays a list of news stories from a selected source.
+* Other Module: Contains other files which are not part of Instant App.
+![](https://cdn-images-1.medium.com/max/1000/1*mlPE1lXVDfI2ueQlivwyNw.jpeg)
+
+## How to implement a new Feature 
+
+There is an empty FeaturModule(**others**) added to the project for reference.
+
+1. Add a new feature module from Android studio New Module Wizard.
+2. Add one `ActivityModule` and one `ActivityComponent` for that feature.
+3. Add a root Activity for the feature which will extend `BaseActivity`  where you will inject your dependencies.
+
 
 ## Library Used
 * Dagger2
@@ -16,6 +40,7 @@ MVP
 * Retrofit2
 * Timber
 * Rave
+* Glide
 
 ## BuildFlavours
 This Project consist of two Build Flavours.
@@ -30,6 +55,9 @@ This Project consist of two Build Flavours.
 ## Known Issues
 * Instant App crashes with proguard on with error message
 ``could not find com.iambedant.instantappstarter.ui.newsSources.NewsSourceActivity in any atom class loader or parent class loader``
+
+## Contributing to the project
+If you want to improve this project, your pull requests are most welcome.
 
 ## License
 
