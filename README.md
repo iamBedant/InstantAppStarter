@@ -68,7 +68,8 @@ If you want to improve this project, your pull requests are most welcome.
 
 ## License
 
-```MIT License
+```
+MIT License
 
 Copyright (c) [2017] [Bedanta Bikash Borah]
 
