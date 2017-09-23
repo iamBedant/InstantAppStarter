@@ -6,6 +6,9 @@ Get the Sample App on Google Play [here](https://play.google.com/store/apps/deta
 https://blog.mindorks.com/android-mvp-architecture-with-instant-app-support-11ba48241a82
 
 ## Instant App links
+
+If your mobile device supports Instant App, you can use these links to try it out. To enable Instant Apps, navigate to Settings --> Google --> InstantApps and turn it on.
+
 * https://iambedant.com/source
 * https://iambedant.com/newslist/bbc-news
 
