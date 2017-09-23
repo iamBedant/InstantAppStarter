@@ -46,6 +46,8 @@ You can refer to **other** module for example.
 * Timber
 * Rave
 * Glide
+* Espresso for UI tests
+* Mockito
 
 ## BuildFlavours
 This Project consist of two Build Flavours.
