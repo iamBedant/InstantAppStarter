@@ -34,6 +34,8 @@ Suppose you want to add a new Feature called **MyFeature**
 3. Add a `BaseActivityMyFeature` which will extend `BaseActivity` and inject your dependencies there.
 4. If you want to make **MyFeature** an Instant App, Add `implementation project(":MyFeature")` to `build.gradle` of `instantapp` module.
 
+You can refer to **other** module for example.
+
 ## Library Used
 * Dagger2
 * RxJava2
