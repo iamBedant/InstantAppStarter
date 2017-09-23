@@ -46,8 +46,10 @@ You can refer to **other** module for example.
 
 ## BuildFlavours
 This Project consist of two Build Flavours.
-* uat
-* prod
+* **uat** 
+* **prod**
+
+**Base url** and **Access keys** for these environments are inside `gradle.properties` file. 
 
 ## Build Types
 * debug
