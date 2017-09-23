@@ -19,20 +19,20 @@ Responsible for building the Application Apk.
 ### Instant App Module: 
 Responsible for building Instant App Apks.
 ### Feature Modules:
-* Base Module: Contains all Common components like Network component, Dependency Injection Setup, Base Activities, Base Presenters, etc.
-* Feature One Module: Contains all classes for first Instant App, which displays a list of news sources in a recyclerview.
-* Feature Two Module: Contains all classes for Second Instant App, which displays a list of news stories from a selected source.
-* Other Module: Contains other files which are not part of Instant App.
+* **Base Module:** Contains all Common components like Network component, Dependency Injection Setup, Base Activities, Base Presenters, etc.
+* **Feature One Module:** Contains all classes for first Instant App, which displays a list of news sources in a recyclerview.
+* **Feature Two Module:** Contains all classes for Second Instant App, which displays a list of news stories from a selected source.
+* **Other Module:** Contains other files which are not part of Instant App.
+
+
 ![](https://cdn-images-1.medium.com/max/1000/1*mlPE1lXVDfI2ueQlivwyNw.jpeg)
 
 ## How to implement a new Feature 
-
-There is an empty FeaturModule(**others**) added to the project for reference.
-
-1. Add a new feature module from Android studio New Module Wizard.
-2. Add one `ActivityModule` and one `ActivityComponent` for that feature.
-3. Add a root Activity for the feature which will extend `BaseActivity`  where you will inject your dependencies.
-
+Suppose you want to add a new Feature called **MyFeature**
+1. Add a new Feature Module(**MyFeature**) from Android studio New Module Wizard.
+2. Add one `ActivityModule` and one `ActivityComponent`.
+3. Add a `BaseActivityMyFeature` which will extend `BaseActivity` and inject your dependencies there.
+4. If you want to make **MyFeature** an Instant App, Add `implementation project(":MyFeature")` to `build.gradle` of `instantapp` module.
 
 ## Library Used
 * Dagger2
